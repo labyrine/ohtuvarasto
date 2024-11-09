@@ -35,6 +35,13 @@ class Varasto:
             kaikki_mita_voidaan = self.saldo
             self.saldo = 0.0
 
+            if maara > 100:
+                if kaikki_mita_voidaan > 100:
+                    if self.saldo > 100:
+                        return -50
+                    return -50
+                return -50
+
             return kaikki_mita_voidaan
 
         self.saldo = self.saldo - maara
